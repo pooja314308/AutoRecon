@@ -1,0 +1,12 @@
+# ============================================================
+# requirements.txt
+# Project: Automated Information Gathering & Security Tool
+# Install all dependencies with:
+#   pip install -r requirements.txt
+# ============================================================
+
+# DNS record lookups (A, MX, NS, TXT records)
+dnspython==2.4.2
+
+# WHOIS domain registration information
+python-whois==0.9.4

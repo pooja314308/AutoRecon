@@ -1,0 +1,148 @@
+{
+    "report_metadata": {
+        "tool": "Automated Information Gathering & Security Report Tool",
+        "version": "1.0",
+        "generated_at": "2026-05-15 07:07:43",
+        "target": "example.com"
+    },
+    "ip_resolution": {
+        "target": "example.com",
+        "ip_address": "104.20.23.154",
+        "status": "Resolved",
+        "error": null
+    },
+    "dns_records": {
+        "A": [
+            "104.20.23.154",
+            "172.66.147.243"
+        ],
+        "MX": [
+            ". (Priority: 0)"
+        ],
+        "NS": [
+            "hera.ns.cloudflare.com.",
+            "elliott.ns.cloudflare.com."
+        ],
+        "TXT": [
+            "\"v=spf1 -all\"",
+            "\"_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9\""
+        ],
+        "errors": {}
+    },
+    "whois_information": {
+        "domain_name": null,
+        "registrar": null,
+        "creation_date": null,
+        "expiration_date": null,
+        "updated_date": null,
+        "name_servers": [],
+        "status": null,
+        "emails": null,
+        "country": null,
+        "raw": null,
+        "error": "timed out"
+    },
+    "port_scan": [
+        {
+            "port": 21,
+            "service": "FTP (File Transfer Protocol)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 22,
+            "service": "SSH (Secure Shell)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 23,
+            "service": "Telnet (Unencrypted Remote Login)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 25,
+            "service": "SMTP (Email Sending)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 53,
+            "service": "DNS (Domain Name System)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 80,
+            "service": "HTTP (Web Server)",
+            "status": "Open",
+            "error": null
+        },
+        {
+            "port": 110,
+            "service": "POP3 (Email Receiving)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 143,
+            "service": "IMAP (Email Access)",
+            "status": "Closed",
+            "error": null
+        },
+        {
+            "port": 443,
+            "service": "HTTPS (Secure Web Server)",
+            "status": "Open",
+            "error": null
+        },
+        {
+            "port": 3306,
+            "service": "MySQL (Database)",
+            "status": "Closed",
+            "error": null
+        }
+    ],
+    "banner_grabbing": [
+        {
+            "port": 80,
+            "service": "HTTP (Web Server)",
+            "banner": "HTTP/1.1 403 Forbidden | x-deny-reason: host_not_allowed | content-length: 21 | content-type: text/plain | date: Fri, 15 May 2026 07:07:43 GMT",
+            "status": "Grabbed"
+        },
+        {
+            "port": 443,
+            "service": "HTTPS (Secure Web Server)",
+            "banner": "HTTPS (SSL/TLS Encrypted - Banner requires SSL handshake)",
+            "status": "Detected"
+        }
+    ],
+    "risk_analysis": {
+        "summary": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 1,
+            "INFO": 1
+        },
+        "findings": [
+            {
+                "level": "LOW",
+                "risk": "HTTP Port Open (Unencrypted Web)",
+                "description": "HTTP traffic is transmitted in PLAINTEXT. User credentials and sensitive data can be intercepted. The site may be vulnerable to Man-in-the-Middle attacks.",
+                "recommendation": "Force HTTPS on all connections using HTTP \u2192 HTTPS redirect. Implement HSTS (HTTP Strict Transport Security). Obtain and install a valid SSL/TLS certificate.",
+                "port": 80,
+                "service": "HTTP (Web Server)"
+            },
+            {
+                "level": "INFO",
+                "risk": "HTTPS Port Open (Secure)",
+                "description": "HTTPS uses SSL/TLS encryption for secure communication. However, weak cipher suites, expired SSL certificates, or misconfigured TLS settings can still create vulnerabilities.",
+                "recommendation": "Use TLS 1.2 or higher (disable TLS 1.0 and 1.1). Ensure SSL certificate is valid and not expired. Check for weak cipher suites using SSL Labs (ssllabs.com).",
+                "port": 443,
+                "service": "HTTPS (Secure Web Server)"
+            }
+        ]
+    }
+}

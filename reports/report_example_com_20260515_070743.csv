@@ -1,0 +1,17 @@
+PORT SCAN RESULTS
+Target,Port,Status,Service
+example.com,21,Closed,FTP (File Transfer Protocol)
+example.com,22,Closed,SSH (Secure Shell)
+example.com,23,Closed,Telnet (Unencrypted Remote Login)
+example.com,25,Closed,SMTP (Email Sending)
+example.com,53,Closed,DNS (Domain Name System)
+example.com,80,Open,HTTP (Web Server)
+example.com,110,Closed,POP3 (Email Receiving)
+example.com,143,Closed,IMAP (Email Access)
+example.com,443,Open,HTTPS (Secure Web Server)
+example.com,3306,Closed,MySQL (Database)
+
+RISK ANALYSIS RESULTS
+Port,Risk Level,Risk Name,Service,Description,Recommendation
+80,LOW,HTTP Port Open (Unencrypted Web),HTTP (Web Server),HTTP traffic is transmitted in PLAINTEXT. User credentials and sensitive data can be intercepted. Th,Force HTTPS on all connections using HTTP → HTTPS redirect. Implement HSTS (HTTP Strict Transport Se
+443,INFO,HTTPS Port Open (Secure),HTTPS (Secure Web Server),"HTTPS uses SSL/TLS encryption for secure communication. However, weak cipher suites, expired SSL cer",Use TLS 1.2 or higher (disable TLS 1.0 and 1.1). Ensure SSL certificate is valid and not expired. Ch

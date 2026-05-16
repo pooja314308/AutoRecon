@@ -1,0 +1,93 @@
+=================================================================
+      AUTOMATED INFORMATION GATHERING & SECURITY REPORT
+           Diploma Final Year Project - Cyber Security
+=================================================================
+
+  Target     : youtube.com
+  Scan Date  : 2026-05-15 12:51:35
+  Report By  : Automated Security Tool v1.0
+
+=================================================================
+
+SECTION 1: IP RESOLUTION
+----------------------------------------
+  Target       : youtube.com
+  IP Address   : 142.250.143.190
+  Status       : Resolved
+
+SECTION 2: DNS RECORDS
+----------------------------------------
+  A Records:
+    --> 142.250.143.136
+    --> 142.250.143.93
+    --> 142.250.143.91
+    --> 142.250.143.190
+  MX Records:
+    --> smtp.google.com. (Priority: 0)
+  NS Records:
+    --> ns1.google.com.
+    --> ns2.google.com.
+    --> ns4.google.com.
+    --> ns3.google.com.
+  TXT Records:
+    --> "facebook-domain-verification=64jdes7le4h7e7lfpi22rijygx58j1"
+    --> "google-site-verification=QtQWEwHWM8tHiJ4s-jJWzEQrD_fF3luPnpzNDH-Nw-w"
+    --> "v=spf1 include:google.com mx -all"
+
+SECTION 3: WHOIS INFORMATION
+----------------------------------------
+  Domain Name  : YOUTUBE.COM
+  Registrar    : MarkMonitor, Inc.
+  Created On   : 2005-02-15 05:13:12+00:00
+  Expires On   : 2027-02-15 05:13:12+00:00
+  Last Updated : 2026-01-14 10:29:14+00:00
+  Country      : US
+  Contact Email: ['abusecomplaints@markmonitor.com', 'whoisrequest@markmonitor.com']
+  Name Servers :
+    --> NS1.GOOGLE.COM
+    --> NS2.GOOGLE.COM
+    --> NS3.GOOGLE.COM
+    --> NS4.GOOGLE.COM
+
+SECTION 4: PORT SCAN RESULTS
+----------------------------------------
+  PORT     STATUS     SERVICE
+  ------   --------   ------------------------------
+  21       Closed     FTP (File Transfer Protocol)
+  22       Closed     SSH (Secure Shell)
+  23       Closed     Telnet (Unencrypted Remote Login)
+  25       Closed     SMTP (Email Sending)
+  53       Closed     DNS (Domain Name System)
+  80       Open       HTTP (Web Server)
+  110      Closed     POP3 (Email Receiving)
+  143      Closed     IMAP (Email Access)
+  443      Open       HTTPS (Secure Web Server)
+  3306     Closed     MySQL (Database)
+
+  Total Open Ports: 2 / 10
+
+SECTION 5: BANNER GRABBING
+----------------------------------------
+  Port 80 (HTTP (Web Server)):
+    Status : Grabbed
+    Banner : HTTP/1.1 301 Moved Permanently | Content-Type: application/binary | X-Content-Type-Options: nosniff | Cache-Control: no-cache, no-store, max-age=0, must-revalidate | Pragma: no-cache | Expires: Mon, 0
+
+  Port 443 (HTTPS (Secure Web Server)):
+    Status : Detected
+    Banner : HTTPS (SSL/TLS Encrypted - Banner requires SSL handshake)
+
+SECTION 6: SECURITY RISK ANALYSIS
+----------------------------------------
+  Risk Summary:
+    CRITICAL : 0
+    HIGH     : 0
+    MEDIUM   : 0
+    LOW      : 1
+    INFO     : 1
+
+  Detailed Findings:
+
+  [1] Port 80 - HTTP Port Open (Unencrypted Web)
+      Severity    : LOW
+      Service     : HTTP (Web Server)
+      Description : HTTP traffic is transmitted in PLAINTEXT. User credentials and sensitive data can be intercepted. The site may be vulnerable to Man-in-the-Middle attacks.

@@ -1,0 +1,97 @@
+=================================================================
+      AUTOMATED INFORMATION GATHERING & SECURITY REPORT
+           Diploma Final Year Project - Cyber Security
+=================================================================
+
+  Target     : example.com
+  Scan Date  : 2026-05-15 07:07:43
+  Report By  : Automated Security Tool v1.0
+
+=================================================================
+
+SECTION 1: IP RESOLUTION
+----------------------------------------
+  Target       : example.com
+  IP Address   : 104.20.23.154
+  Status       : Resolved
+
+SECTION 2: DNS RECORDS
+----------------------------------------
+  A Records:
+    --> 104.20.23.154
+    --> 172.66.147.243
+  MX Records:
+    --> . (Priority: 0)
+  NS Records:
+    --> hera.ns.cloudflare.com.
+    --> elliott.ns.cloudflare.com.
+  TXT Records:
+    --> "v=spf1 -all"
+    --> "_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9"
+
+SECTION 3: WHOIS INFORMATION
+----------------------------------------
+  Domain Name  : None
+  Registrar    : None
+  Created On   : None
+  Expires On   : None
+  Last Updated : None
+  Country      : None
+  Contact Email: None
+
+SECTION 4: PORT SCAN RESULTS
+----------------------------------------
+  PORT     STATUS     SERVICE
+  ------   --------   ------------------------------
+  21       Closed     FTP (File Transfer Protocol)
+  22       Closed     SSH (Secure Shell)
+  23       Closed     Telnet (Unencrypted Remote Login)
+  25       Closed     SMTP (Email Sending)
+  53       Closed     DNS (Domain Name System)
+  80       Open       HTTP (Web Server)
+  110      Closed     POP3 (Email Receiving)
+  143      Closed     IMAP (Email Access)
+  443      Open       HTTPS (Secure Web Server)
+  3306     Closed     MySQL (Database)
+
+  Total Open Ports: 2 / 10
+
+SECTION 5: BANNER GRABBING
+----------------------------------------
+  Port 80 (HTTP (Web Server)):
+    Status : Grabbed
+    Banner : HTTP/1.1 403 Forbidden | x-deny-reason: host_not_allowed | content-length: 21 | content-type: text/plain | date: Fri, 15 May 2026 07:07:43 GMT
+
+  Port 443 (HTTPS (Secure Web Server)):
+    Status : Detected
+    Banner : HTTPS (SSL/TLS Encrypted - Banner requires SSL handshake)
+
+SECTION 6: SECURITY RISK ANALYSIS
+----------------------------------------
+  Risk Summary:
+    CRITICAL : 0
+    HIGH     : 0
+    MEDIUM   : 0
+    LOW      : 1
+    INFO     : 1
+
+  Detailed Findings:
+
+  [1] Port 80 - HTTP Port Open (Unencrypted Web)
+      Severity    : LOW
+      Service     : HTTP (Web Server)
+      Description : HTTP traffic is transmitted in PLAINTEXT. User credentials and sensitive data can be intercepted. The site may be vulnerable to Man-in-the-Middle attacks.
+      Fix         : Force HTTPS on all connections using HTTP → HTTPS redirect. Implement HSTS (HTTP Strict Transport Security). Obtain and install a valid SSL/TLS certificate.
+
+  [2] Port 443 - HTTPS Port Open (Secure)
+      Severity    : INFO
+      Service     : HTTPS (Secure Web Server)
+      Description : HTTPS uses SSL/TLS encryption for secure communication. However, weak cipher suites, expired SSL certificates, or misconfigured TLS settings can still create vulnerabilities.
+      Fix         : Use TLS 1.2 or higher (disable TLS 1.0 and 1.1). Ensure SSL certificate is valid and not expired. Check for weak cipher suites using SSL Labs (ssllabs.com).
+
+=================================================================
+  DISCLAIMER: This scan is for authorized educational use only.
+  Unauthorized scanning of systems is illegal and unethical.
+=================================================================
+  Report generated at: 2026-05-15 07:07:43
+=================================================================
