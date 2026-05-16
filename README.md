@@ -1,6 +1,5 @@
-# Automated Information Gathering and Security Reporting Tool
+# AutoRecon: Automated Information Gathering & Security Reporting Tool
 
-**Diploma Final Year Project — Cyber Security & Ethical Hacking**
 
 ---
 
@@ -188,12 +187,3 @@ This tool is developed strictly for **educational purposes** as part of a Diplom
 Unauthorized scanning of systems is **illegal** under the IT Act 2000 (India) and similar laws worldwide. The developer and college are not responsible for any misuse.
 
 ---
-
-## Author
-
-- **Name:** [Your Full Name]
-- **Roll No:** [Your Roll Number]
-- **Branch:** Diploma in Computer Science / Cyber Security
-- **College:** [Your College Name]
-- **Guide:** [Faculty Guide Name]
-- **Year:** 2024–2025
